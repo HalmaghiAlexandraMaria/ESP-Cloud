@@ -100,7 +100,14 @@ http://192.168.x.x:5000/motion
 }
 ```
 
-## ESP32
+## ESP32 (Arduino)
+
+Codul firmware este în `proiect/proiect.ino`.
+
+1. Deschide folderul `proiect/` în **Arduino IDE** (Fișier → Deschide → `proiect.ino`).
+2. Editează `ssid`, `password` și `serverUrl` (IP-ul PC-ului cu Flask).
+3. Placă: **ESP32**, PIR pe pin 14, LED pe pin 33.
+4. Încarcă sketch-ul pe placă.
 
 Dispozitivul trimite JSON la schimbarea stării PIR și controlează LED-ul după `led_command` din răspunsul API.
 
@@ -111,6 +118,8 @@ ESP-Cloud/
 ├── app.py              # Flask API
 ├── train_model.py      # Antrenare MLP
 ├── requirements.txt
+├── proiect/
+│   └── proiect.ino     # Firmware ESP32
 ├── ml/
 │   ├── features.py     # Extragere features
 │   └── predictor.py    # Încărcare model + predict()
